@@ -56,12 +56,7 @@ end
 
 #### 邮件大小写处理
 
-```ruby
-def DataProcess.upper_case_to_lower_case(email: String) # 将地址中大写改为小写
-  ...
-  return email_modified # 返回修改后地址
-end
-```
+听说 `ruby`有`String.downcase()`方法 。。
 
 #### 哈希
 
@@ -69,6 +64,15 @@ end
 def DataProcess.hash(str: String) # 对字段求 hash 值，并对文件数量(File_Number)求模
   ...
   return hash_value
+end
+```
+
+#### 初始数据载入
+
+```ruby
+def LoadInitialData(data_path)
+  ...
+  return true / false
 end
 ```
 
