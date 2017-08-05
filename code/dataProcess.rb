@@ -1,4 +1,4 @@
-# require 'FileIO'
+require './fileIO'
 require './testPhone'
 
 $Initial_Data_Path = '../data/card_person_new.data'
