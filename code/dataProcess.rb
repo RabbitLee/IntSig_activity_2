@@ -1,8 +1,7 @@
-require './fileIO'
 require './testPhone'
 
 $Initial_Data_Path = '../data/card_person_new.data'
-
+$File_Number = 10000
 module DataProcess
   def self.is_item_valid(item) # 根据电话、邮箱判断是否合法
     return testPhone(item['phone']) && testEmail(item['email'])
