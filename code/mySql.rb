@@ -2,6 +2,7 @@ $LOAD_PATH << '.'
 require 'Index'
 require 'TestPhone'
 require 'FileIO'
+require 'Select'
 
 
 str=ARGV.join(' ')  
@@ -11,27 +12,40 @@ action=ARGV.first
 
 item=Index.getItemFromUrl(str)
 
-if action=='count'&&!/^1/.match(phone)
-	puts '错误，电话不合法'
-end
+# if action=='count'&&!/^1/.match(phone)
+# 	puts '错误，电话不合法'
+# end
 
-if action=='select'&&phone!='nil'&&!TestPhone.testPhone(phone)
-	puts '错误，电话不合法'
-end
+# if action=='select'&&phone!='nil'&&!TestPhone.testPhone(phone)
+# 	puts '错误，电话不合法'
+# end
 
-if email!='nil'&&!TestPhone.testEmail(email)
-	puts '错误，邮箱不合法'
-end
+# if email!='nil'&&!TestPhone.testEmail(email)
+# 	puts '错误，邮箱不合法'
+# end
+
 
 if action=='select'
-	puts 'select action'
+	time1=Time.now
+	items=Select.select(item)
+	time2=Time.now
+	puts "#{items}"
+	puts time2-time1
 elsif action=='delete'
-	puts 'delete action'
+	time3=Time.now
+	items=FileIO.delete(item)
+	time4=Time.now
+	puts time4-time3
 elsif action=='insert'
+	time5=Time.now
 	FileIO.write(item)
-	# puts item
+	time6=Time.now
+	puts time6-time5
 elsif action=='update'
-	puts 'update action'
+	time7=Time.now
+	FileIO.modify(item)
+	time8=Time.now
+	puts time8-time7
 elsif action=='count'
 	puts 'count action'
 else 
