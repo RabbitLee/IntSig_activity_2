@@ -1,12 +1,17 @@
 #!/usr/bin/ruby -w
 require 'pathname'
-# require './dataProcess'
-
 
 $File_Number = 10000
 
 module FileIO
-    
+    def self.hash(str)
+        seed = 5381
+        result = 0
+        str.each_char() do |char|
+            result = (result * seed + char.ord) % $File_Number
+        end
+        result
+    end
     def self.write(item)#将Hash item写入文件
 
         #获取字段的文件路径
@@ -17,8 +22,9 @@ module FileIO
         companyPath = "/data/company/"
         departmentPath = "/data/department/"
         positionPath = "/data/position/"
-        #获取字段的值
 
+
+        #获取字段的值
         name = "#{item['name']}"
         phone = "#{item['phone']}"
         email = "#{item['email']}"
@@ -27,12 +33,12 @@ module FileIO
         position = "#{item['position']}"
 
         #获取字段hash
-        hashName = DataProcess.hash(name);
-        hashPhone = DataProcess.hash(phone);
-        hashEmail = DataProcess.hash(email.downcase());
-        hashCompany = DataProcess.hash(company);
-        hashDepartment = DataProcess.hash(department);
-        hashPosition = DataProcess.hash(position);
+        hashName = hash(name);
+        hashPhone = hash(phone);
+        hashEmail = hash(email.downcase());
+        hashCompany = hash(company);
+        hashDepartment = hash(department);
+        hashPosition = hash(position);
 
         #将数据分别插入到其中
         writeFile("#{parentPath+namePath+hashName.to_s}",name,phone,email,company,department,position);
@@ -57,6 +63,49 @@ module FileIO
 
 
   def self.delete(name,phone,email,company,department,position)
+
+      parentPath =  File.expand_path("..",Dir.pwd)
+      namePath = "/data/name/"
+      phonePath ="/data/phone/"
+      emailPath = "/data/email/"
+      companyPath = "/data/company/"
+      departmentPath = "/data/department/"
+      positionPath = "/data/position/"
+
+
+      #获取字段hash
+      hashName = hash(name);
+      hashPhone = hash(phone);
+      hashEmail = hash(email.downcase());
+      hashCompany = hash(company);
+      hashDepartment = hash(department);
+      hashPosition = hash(position);
+
+
+    nameFilePath = parentPath+namePath+hashName.to_s;
+    phoneFilePath = parentPath+phonePath+hashPhone.to_s
+    emailFilePath = parentPath+emailPath+hashEmail.to_s
+    companyFilePath = parentPath+companyPath+hashCompany.to_s
+    departmentFilePath = parentPath+departmentPath+hashDepartment.to_s
+    positionFilePath = parentPath+positionPath+hashPosition.to_s
+
+
+
+
+
+
+
+  end
+
+  def self.deleteDataAndWrite(filePath,name,phone,email,company,department,position)
+      arr = IO.readlines(filePath);
+      size = arr.length
+      i = 0;
+      while i < size  do
+          puts("在循环语句中 i = #$i" )
+          $i +=1
+      end
+
 
 
   end
