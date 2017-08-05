@@ -21,6 +21,14 @@ module FileIO
         company = "#{item['company']}"
         department = "#{item['department']}"
         position = "#{item['position']}"
+
+
+        puts name
+        puts phone
+        puts email
+        puts company
+        puts department
+        puts position
         
         hashName = DataProcess.hash(name);
         hashPhone = DataProcess.hash(phone);
@@ -28,13 +36,13 @@ module FileIO
         hashCompany = DataProcess.hash(company);
         hashDepartment = DataProcess.hash(department);
         hashPosition = DataProcess.hash(position);
-        
-        writeFile("#{parentPath+namePath+hashName}",name,phone,email,company,department,position);
-        writeFile("#{parentPath+phonePath+hashPhone}",name,phone,email,company,department,position);
-        writeFile("#{parentPath+emailPath+hashEmail}",name,phone,email,company,department,position);
-        writeFile("#{parentPath+companyPath+hashCompany}",name,phone,email,company,department,position);
-        writeFile("#{parentPath+departmentPath+hashDepartment}",name,phone,email,company,department,position);
-        writeFile("#{parentPath+positionPath+hashPosition}",name,phone,email,company,department,position);
+
+        writeFile("#{parentPath+namePath+hashName.to_s}",name,phone,email,company,department,position);
+        writeFile("#{parentPath+phonePath+hashPhone.to_s}",name,phone,email,company,department,position);
+        writeFile("#{parentPath+emailPath+hashEmail.to_s}",name,phone,email,company,department,position);
+        writeFile("#{parentPath+companyPath+hashCompany.to_s}",name,phone,email,company,department,position);
+        writeFile("#{parentPath+departmentPath+hashDepartment.to_s}",name,phone,email,company,department,position);
+        writeFile("#{parentPath+positionPath+hashPosition.to_s}",name,phone,email,company,department,position);
         
     end
     
