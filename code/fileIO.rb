@@ -39,14 +39,14 @@ module FileIO
         end
     
     
-    def writeFile(filePath,name,phone,email,company,department,position)
-        file = File.open("#{filePath}","a+")
-        if file
-            file.syswrite("#{name}!-!#{phone}!-!#{email}!-!#{company}!-!#{department!-!#{position}}\n")
-            else
-            puts "Unable to open file!"
-        end
-        file.close()
-        
-        end
+    # def writeFile(filePath,name,phone,email,company,department,position)
+    #     file = File.open("#{filePath}","a+")
+    #     if file
+    #         file.syswrite("#{name}!-!#{phone}!-!#{email}!-!#{company}!-!#{department!-!#{position}}\n")
+    #         else
+    #         puts "Unable to open file!"
+    #     # end
+    #     file.close()
+    #
+    #     end
 end
