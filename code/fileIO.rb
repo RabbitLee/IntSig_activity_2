@@ -31,7 +31,7 @@ module FileIO
         company = "#{item['company']}"
         department = "#{item['department']}"
         position = "#{item['position']}"
-
+        
         #获取字段hash
         hashName = hash(name);
         hashPhone = hash(phone);

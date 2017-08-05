@@ -49,7 +49,7 @@ module Index
 	end
 
 	def Index.getItemFromUrl(argvString)
-		item=['name'=>getNameFromUrl(argvString),'phone'=>getPhoneFromUrl(argvString),'email'=>getEmailFromUrl(argvString),'company'=>getCompanyFromUrl(argvString),'department'=>getDepartmentFromUrl(argvString),'position'=>getPositionFromUrl(argvString)]
+		item={'name'=>getNameFromUrl(argvString),'phone'=>getPhoneFromUrl(argvString),'email'=>getEmailFromUrl(argvString),'company'=>getCompanyFromUrl(argvString),'department'=>getDepartmentFromUrl(argvString),'position'=>getPositionFromUrl(argvString)}
 		return item
 	end
 end
