@@ -7,15 +7,6 @@ module DataProcess
     TestPhone.testPhone(item['phone']) && TestPhone.testEmail(item['email'])
   end
 
-  def self.hash(str)
-    seed = 5381
-    result = 0
-    str.each_char() do |char|
-      result = (result * seed + char.ord) % $File_Number
-    end
-    result
-  end
-
   def self.LoadInitialData(data_path)
     File.open(data_path, 'r') do |file|
       file.each_line do |line|
