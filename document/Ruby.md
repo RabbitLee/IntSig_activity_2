@@ -28,9 +28,15 @@ end
 
 数据类型：（存储一条数据）
 
-```
+```ruby
 item = {name: , phone: , email: , company: , department: , position: }
 # 以 Item 代表此数据类型
+```
+
+文件数量：
+
+```
+File_Number = 10000
 ```
 
 #### 判断合法性
@@ -41,21 +47,30 @@ item = {name: , phone: , email: , company: , department: , position: }
 
 2. 邮箱
 
-   ```ruby
-   def DataProcess.is_item_valid(item: Item) # 根据电话、邮箱判断是否合法
-     ...
-     return true / false
-   end
-   ```
+```ruby
+def DataProcess.is_item_valid(item: Item) # 根据电话、邮箱判断是否合法
+  ...
+  return true / false
+end
+```
 
 #### 邮件大小写处理
 
-1. ```ruby
-   def DataProcess.upper_case_to_lower_case(email: String) # 将地址中大写改为小写
-     ...
-       return email_modified # 返回修改后地址
-   end
-   ```
+```ruby
+def DataProcess.upper_case_to_lower_case(email: String) # 将地址中大写改为小写
+  ...
+  return email_modified # 返回修改后地址
+end
+```
+
+#### 哈希
+
+```ruby
+def DataProcess.hash(str: String) # 对字段求 hash 值，并对文件数量(File_Number)求模
+  ...
+  return hash_value
+end
+```
 
 ### 文件读写
 
@@ -63,6 +78,37 @@ item = {name: , phone: , email: , company: , department: , position: }
 module FileIO
   ..
 end
+```
+
+目录结构：
+
+```bash
+.
+
+├── LICENSE
+
+├── README.md
+
+├── code
+
+	—- FileIO.rb
+
+├── data
+
+	—- name
+
+	—- phone
+
+	—- email
+
+	—- company
+
+	—- department
+
+	—- position
+
+└── document
+
 ```
 
 1. 读
@@ -92,6 +138,15 @@ end
    end
    ```
 
+4. 删
+
+   ```ruby
+   def FileIO.Delete(item: Item)
+     ...
+     return true / false
+   end
+   ```
+
 ### 交互
 
 ```ruby
@@ -99,4 +154,3 @@ module Interaction
   
 end
 ```
-
