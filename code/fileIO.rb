@@ -1,8 +1,9 @@
 #!/usr/bin/ruby -w
 require 'pathname'
-require './dataProcess'
+# require './dataProcess'
 
 
+$File_Number = 10000
 
 module FileIO
     
