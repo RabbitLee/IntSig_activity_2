@@ -4,9 +4,9 @@ module TestPhone
 	#param: str
 	def TestPhone.testPhone(str)
 		if str=~/^1[3|4|5|7|8][0-9]{9}$/
-			puts true
+			return true
 		else
-			puts false
+			return false
 		end
 	end
 
@@ -15,9 +15,9 @@ module TestPhone
 	#param: str
 	def TestPhone.testEmail(str)
 		if str=~/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-			puts true
+			return true
 		else
-			puts false
+			return false
 		end
 	end
 

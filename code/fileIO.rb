@@ -112,24 +112,25 @@ module FileIO
 end
 
 if __FILE__ == $0
-     item1 = Hash['name' => 'wangpeiyu', 'phone' => '15111929296',
-                 'email' => '3285840393@qq.com', 'company' => 'IntSig',
-                 'department' => 'Algorithm', 'position' => 'internship']
-
-     item2 = Hash['name' => 'baidu', 'phone' => '18201987234',
-                 'email' => '472979382@gmail.com', 'company' => 'IntSig',
-                 'department' => 'Algorithm', 'position' => 'internship']
-
-     item3 = Hash['name' => 'yahoo', 'phone' => '15901987108',
-                 'email' => '08438543@gmail.com', 'company' => 'IntSig',
-                 'department' => 'Algorithm', 'position' => 'internship']
-
-     item4 = Hash['name' => 'alibaba', 'phone' => '15901987108',
-                 'email' => 'fafagjag@gmail.com', 'company' => 'IntSig',
-                 'department' => 'Algorithm', 'position' => 'internship']
-    FileIO.write(item1)
-    FileIO.write(item2)
-    FileIO.write(item3)
-    FileIO.write(item4)
+    puts(FileIO.hash('中国人民lalala'))
+    #  item1 = Hash['name' => 'wangpeiyu', 'phone' => '15111929296',
+    #              'email' => '3285840393@qq.com', 'company' => 'IntSig',
+    #              'department' => 'Algorithm', 'position' => 'internship']
+    #
+    #  item2 = Hash['name' => 'baidu', 'phone' => '18201987234',
+    #              'email' => '472979382@gmail.com', 'company' => 'IntSig',
+    #              'department' => 'Algorithm', 'position' => 'internship']
+    #
+    #  item3 = Hash['name' => 'yahoo', 'phone' => '15901987108',
+    #              'email' => '08438543@gmail.com', 'company' => 'IntSig',
+    #              'department' => 'Algorithm', 'position' => 'internship']
+    #
+    #  item4 = Hash['name' => 'alibaba', 'phone' => '15901987108',
+    #              'email' => 'fafagjag@gmail.com', 'company' => 'IntSig',
+    #              'department' => 'Algorithm', 'position' => 'internship']
+    # FileIO.write(item1)
+    # FileIO.write(item2)
+    # FileIO.write(item3)
+    # FileIO.write(item4)
 end
 
